@@ -4,7 +4,10 @@
   </h1>
 <img width="1909" height="957" alt="image" src="https://github.com/user-attachments/assets/270665cd-86c5-432f-ad58-8a419769f6cf" />
 
-  
+<img width="1576" height="718" alt="image" src="https://github.com/user-attachments/assets/1e762964-5369-4520-a081-057edf74621c" />
+
+  <img width="1510" height="931" alt="image" src="https://github.com/user-attachments/assets/41997334-9fbc-4354-89fb-8ed284dc1810" />
+
   <p>
 
 ## ✨ Features
