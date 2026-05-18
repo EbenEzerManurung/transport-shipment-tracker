@@ -2,7 +2,7 @@
   <h1>
     <span style="color: #2563eb;">🚚 Transport Shipment Tracker</span>
   </h1>
-screenshot/dashboard_transport.png
+[screenshot/dashboard_transport.png](https://github.com/EbenEzerManurung/transport-shipment-tracker/blob/main/screenshot/dashboard_transport.png?raw=true)
   
   <p>
 
