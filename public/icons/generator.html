@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate PWA Icons</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        button { padding: 10px 20px; margin: 10px; font-size: 16px; cursor: pointer; }
+        .icon { margin: 10px; display: inline-block; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>🚚 PWA Icon Generator</h1>
+    <p>Click button below to generate all icons:</p>
+    <button onclick="generateAllIcons()">Generate All Icons (8 icons)</button>
+    <div id="icons"></div>
+
+    <script>
+        const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+        
+        function generateIcon(size) {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient biru
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#2563eb');
+            gradient.addColorStop(1, '#1e40af');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Border putih
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = Math.max(2, size * 0.02);
+            ctx.strokeRect(size * 0.05, size * 0.05, size * 0.9, size * 0.9);
+            
+            // Emoji truck
+            ctx.fillStyle = '#ffffff';
+            ctx.font = `${Math.floor(size * 0.45)}px "Segoe UI Emoji", "Apple Color Emoji", Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🚚', size/2, size/2);
+            
+            // Text ukuran
+            ctx.font = `${Math.floor(size * 0.1)}px Arial`;
+            ctx.fillStyle = '#e0e7ff';
+            ctx.fillText(`${size}x${size}`, size/2, size * 0.85);
+            
+            return canvas;
+        }
+        
+        function downloadIcon(canvas, size) {
+            const link = document.createElement('a');
+            link.download = `icon-${size}x${size}.png`;
+            link.href = canvas.toDataURL();
+            link.textContent = `📥 Download icon-${size}x${size}.png`;
+            link.style.display = 'block';
+            link.style.margin = '5px';
+            link.style.padding = '8px';
+            link.style.backgroundColor = '#2563eb';
+            link.style.color = 'white';
+            link.style.textDecoration = 'none';
+            link.style.borderRadius = '5px';
+            link.style.fontSize = '12px';
+            return link;
+        }
+        
+        function generateAllIcons() {
+            const container = document.getElementById('icons');
+            container.innerHTML = '<h3>Click each link to download:</h3>';
+            
+            sizes.forEach(size => {
+                const canvas = generateIcon(size);
+                const link = downloadIcon(canvas, size);
+                container.appendChild(link);
+                
+                // Preview
+                const img = document.createElement('img');
+                img.src = canvas.toDataURL();
+                img.style.width = '50px';
+                img.style.height = '50px';
+                img.style.margin = '5px';
+                img.style.border = '1px solid #ccc';
+                img.style.borderRadius = '10px';
+                container.appendChild(img);
+                container.appendChild(document.createElement('br'));
+            });
+            
+            // Add select all button
+            const selectAll = document.createElement('button');
+            selectAll.textContent = '📦 Download All (ZIP)';
+            selectAll.style.marginTop = '20px';
+            selectAll.style.padding = '10px 20px';
+            selectAll.style.backgroundColor = '#10b981';
+            selectAll.style.color = 'white';
+            selectAll.style.border = 'none';
+            selectAll.style.borderRadius = '5px';
+            selectAll.style.cursor = 'pointer';
+            selectAll.onclick = () => alert('Please download each icon individually, or use browser extension to batch download');
+            container.appendChild(selectAll);
+        }
+    </script>
+</body>
+</html>

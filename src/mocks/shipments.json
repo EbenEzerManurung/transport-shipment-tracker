@@ -1,0 +1,71 @@
+{
+  "shipments": [
+    {
+      "id": "SHP-001",
+      "shipmentId": "SHP-001",
+      "origin": "New York, NY",
+      "destination": "Los Angeles, CA",
+      "route": "I-80 Corridor",
+      "vehicleType": "18-Wheeler Truck",
+      "status": "assigned",
+      "assignedTransporter": "Swift Transport Inc."
+    },
+    {
+      "id": "SHP-002",
+      "shipmentId": "SHP-002",
+      "origin": "Chicago, IL",
+      "destination": "Houston, TX",
+      "route": "I-55 South",
+      "vehicleType": "Box Truck",
+      "status": "not_assigned",
+      "assignedTransporter": null
+    },
+    {
+      "id": "SHP-003",
+      "shipmentId": "SHP-003",
+      "origin": "Miami, FL",
+      "destination": "Atlanta, GA",
+      "route": "I-75 North",
+      "vehicleType": "Refrigerated Truck",
+      "status": "assigned",
+      "assignedTransporter": "Fresh Logistics Co."
+    },
+    {
+      "id": "SHP-004",
+      "shipmentId": "SHP-004",
+      "origin": "Seattle, WA",
+      "destination": "Portland, OR",
+      "route": "I-5 South",
+      "vehicleType": "Flatbed Truck",
+      "status": "not_assigned",
+      "assignedTransporter": null
+    },
+    {
+      "id": "SHP-005",
+      "shipmentId": "SHP-005",
+      "origin": "Dallas, TX",
+      "destination": "Denver, CO",
+      "route": "I-70 West",
+      "vehicleType": "Cargo Van",
+      "status": "assigned",
+      "assignedTransporter": "Highway Haulers LLC"
+    },
+    {
+      "id": "SHP-006",
+      "shipmentId": "SHP-006",
+      "origin": "Boston, MA",
+      "destination": "Washington, DC",
+      "route": "I-95 Corridor",
+      "vehicleType": "Box Truck",
+      "status": "not_assigned",
+      "assignedTransporter": null
+    }
+  ],
+  "transporters": [
+    { "id": 1, "name": "Swift Transport Inc." },
+    { "id": 2, "name": "Fresh Logistics Co." },
+    { "id": 3, "name": "Highway Haulers LLC" },
+    { "id": 4, "name": "Coastal Freight Solutions" },
+    { "id": 5, "name": "Midwest Cargo Express" }
+  ]
+}
